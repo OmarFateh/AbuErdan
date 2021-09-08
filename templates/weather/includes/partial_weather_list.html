@@ -1,0 +1,45 @@
+{% for obj in weather_records %}
+<tr>
+    <td class='text-center'>{{ forloop.counter }}</td>
+    <td class='text-center'>{{ obj.date }}</td>
+    <td class='text-center'>{{ obj.time }}</td>
+    <td class='text-center
+    {% if obj.is_temp_gt_25 %} 
+        text-danger 
+    {% elif obj.is_temp_lte_25 %} 
+        text-success
+    {% endif %}'>
+        <div class="d-flex align-items-center justify-content-center">
+            <span class="mr-3">{{ obj.temp }}</span>
+            {% if obj.is_temp_lt_prev %}
+            <i class="fa fa-arrow-down text-success"></i>
+            {% elif obj.is_temp_gt_prev %}
+            <i class="fa fa-arrow-up text-danger"></i>
+            {% endif %}
+        </div>
+    </td>
+    <td class='text-center
+    {% if obj.is_humidity_gt_55 %} 
+        text-danger 
+    {% elif obj.is_humidity_lte_55 %} 
+        text-success
+    {% endif %}'>
+        <div class="d-flex align-items-center justify-content-center">
+            <span class="mr-3">{{ obj.humidity }}</span>
+            {% if obj.is_humidity_lt_prev %}
+            <i class="fa fa-arrow-down text-success"></i>
+            {% elif obj.is_humidity_gt_prev %}
+            <i class="fa fa-arrow-up text-danger"></i>
+            {% endif %}
+        </div>
+    </td>
+</tr>
+{% empty %}
+<tr>
+    <td colspan="5" class="text-center bg-warning"><b>No Records</b></td>
+</tr>
+{% endfor %}
+
+
+{% ifchanged obj.temp %}
+{% endifchanged %}

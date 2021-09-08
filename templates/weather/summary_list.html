@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Summary</title>
+{% endblock title %}
+
+{% block content %}
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper py-4">
+            <!-- Content Header (Page header) -->
+            <div class="content-header mb-4">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">Summary</h1>
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <!-- Main content -->
+            <section>
+                <div class="table-wrapper">
+                    <table class="table-content" id='summary-table'>
+                        <thead>
+                            <tr>
+                                <th class='text-center'>#</th>
+                                <th class='text-center'>Start Date</th>
+                                <th class='text-center'>End Date</th>
+                                <th class='text-center'>Avg Temperature</th>
+                                <th class='text-center'>Avg Humidity</th>
+                                <th class='text-center'>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% include 'weather/includes/partial_summary_list.html' %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Summary Modal -->
+        <div class="modal fade" id="modal-summary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- scripts -->
+    <script src="{% static 'js/weather/base.js' %}"></script>
+    <script src="{% static 'js/weather/summary_list.js' %}"></script>
+    
+</body>
+
+{% endblock content %}

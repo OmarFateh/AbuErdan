@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Add Weather</title>
+{% endblock title %}
+
+{% block content %}
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper py-4">
+            <!-- Content Header (Page header) -->
+            <div class="content-header mb-4">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">Add Weather</h1>
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Add a new record</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form role="form" action='.' method='POST'>
+                                    {% csrf_token %}
+                                    <div class="card-body">
+                                        {{ form }}
+                                    </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer d-flex justify-content-end">
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- scripts -->
+    
+
+</body>
+
+{% endblock content %}

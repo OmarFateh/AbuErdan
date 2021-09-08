@@ -1,0 +1,21 @@
+{% for obj in summary_records %}
+<tr>
+    <td class='text-center'>{{ forloop.counter }}</td>
+    <td class='text-center'>{{ obj.start_date }}</td>
+    <td class='text-center'>{{ obj.end_date }}</td>
+    <td class='text-center'>{{ obj.avg_temp }}</td>
+    <td class='text-center'>{{ obj.avg_humidity }}</td>
+    <td class='text-center'>
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-danger js-delete-summary"
+                data-url="{{ obj.get_delete_absolute_url }}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    </td>
+</tr>
+{% empty %}
+<tr>
+    <td colspan="6" class="text-center bg-warning"><b>No Records</b></td>
+</tr>
+{% endfor %}
