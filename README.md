@@ -23,7 +23,7 @@ https://abuerdan-grid.herokuapp.com/weather/add/
 https://abuerdan-grid.herokuapp.com/weather/summary/list/  
 
 ## DB Schema
-![Alt text](https://github.com/OmarFateh/Doctor-Online-Task-API/blob/main/Doctor%20Online%20db.png?raw=true)
+![Alt text](https://github.com/OmarFateh/AbuErdan-grid/blob/main/DB%20Schema.png?raw=true)
 
 ## Features
 * Weather:  
